@@ -66,6 +66,16 @@
             flex-wrap: wrap;
             gap: 20px;
         }
+
+        .grid-container > div {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+        .grid-container > div > h3 {
+            white-space: nowrap;
+        }
         
         .grid {
             display: grid;
@@ -319,6 +329,59 @@
             p {
                 font-size: 0.85em;
             }
+            
+            /* Navigation mobile responsive */
+            .navigation {
+                bottom: 5px;
+                padding: 6px 10px;
+                flex-wrap: wrap;
+                max-width: calc(100vw - 20px);
+            }
+            
+            .nav-btn {
+                padding: 8px 12px;
+                font-size: 11px;
+                margin: 2px;
+            }
+            
+            #slideCounter {
+                font-size: 11px;
+                margin: 0 4px;
+                order: 3;
+                width: 100%;
+                text-align: center;
+                margin-top: 5px;
+            }
+            
+            /* Slide 5 table full responsive */
+            table {
+                font-size: 9px;
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            th, td {
+                padding: 4px;
+                font-size: 9px;
+                min-width: 80px;
+            }
+            
+            /* Slide 6 grid container center */
+            .grid-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                margin: 10px 0;
+            }
+            
+            .grid-container > div {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
         }
         
         /* Tablet optimizations */
@@ -331,6 +394,21 @@
             .grid-container {
                 justify-content: space-around;
             }
+            
+            /* Navigation tablet */
+            .navigation {
+                padding: 10px 20px;
+            }
+            
+            .nav-btn {
+                padding: 10px 18px;
+                font-size: 14px;
+            }
+            
+            #slideCounter {
+                font-size: 14px;
+                margin: 0 15px;
+            }
         }
         
         /* Large screen optimizations */
@@ -342,6 +420,21 @@
             
             .slide-content {
                 padding: 40px;
+            }
+            
+            /* Navigation desktop */
+            .navigation {
+                padding: 12px 25px;
+            }
+            
+            .nav-btn {
+                padding: 12px 20px;
+                font-size: 16px;
+            }
+            
+            #slideCounter {
+                font-size: 16px;
+                margin: 0 20px;
             }
         }
         
@@ -371,10 +464,50 @@
             .nav-btn {
                 padding: 12px 16px;
                 font-size: 14px;
+                min-height: 44px;
+                min-width: 44px;
             }
             
             .nav-btn:active {
                 background: #4c51bf;
+            }
+            
+            .navigation {
+                padding: 10px 15px;
+            }
+        }
+        
+        /* Extra small screens */
+        @media (max-width: 320px) {
+            .navigation {
+                bottom: 5px;
+                padding: 5px 8px;
+            }
+            
+            .nav-btn {
+                padding: 6px 8px;
+                font-size: 10px;
+                margin: 1px;
+            }
+            
+            #slideCounter {
+                font-size: 10px;
+                margin: 2px 0;
+            }
+            
+            /* Make slide 6 even more compact */
+            .grid-container > div {
+                max-width: 280px;
+            }
+            
+            .grid {
+                grid-template-columns: repeat(5, 25px);
+            }
+            
+            .cell {
+                width: 25px;
+                height: 25px;
+                font-size: 8px;
             }
         }
         
